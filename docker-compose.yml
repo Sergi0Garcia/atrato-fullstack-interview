@@ -12,3 +12,14 @@ services:
       - "3000:3000"
     command: >
       node server.js
+
+  client:
+    build:
+      context: .
+      dockerfile: ./containers/client/Dockerfile
+    image: client-atrato
+    container_name: client-atrato
+    restart: always
+    ports:
+      - "80:80"
+

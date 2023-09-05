@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./containers/app/Dockerfile
+    image: app-atrato
+    container_name: app-atrato
+    restart: always
+    ports:
+      - "3000:3000"
+    command: >
+      node server.js
